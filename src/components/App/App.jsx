@@ -36,20 +36,20 @@ export const App = () => {
     isExistName ? alert(message) : setContacts([...contacts, newContact]);
   };
 
-  const deleteContact = contactId => {
-    const filteredContacts = contacts.filter(
-      contact => contact.id !== contactId
-    );
-    setContacts(filteredContacts);
-  };
+  // const deleteContact = contactId => {
+  //   const filteredContacts = contacts.filter(
+  //     contact => contact.id !== contactId
+  //   );
+  //   setContacts(filteredContacts);
+  // };
 
-  const getVisibleContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
+  // const getVisibleContacts = () => {
+  //   const normalizedFilter = filter.toLowerCase();
 
-    return contacts.filter(({ name }) =>
-      name.toLowerCase().includes(normalizedFilter)
-    );
-  };
+  //   return contacts.filter(({ name }) =>
+  //     name.toLowerCase().includes(normalizedFilter)
+  //   );
+  // };
 
   return (
     <StyledWrapper>
@@ -60,10 +60,7 @@ export const App = () => {
         <StyledContactsBox>
           <h2>Contacts</h2>
           <Filter value={filter} onChange={handleInputChange} />
-          <ContactList
-            contacts={getVisibleContacts()}
-            onDeleteContact={deleteContact}
-          />
+          <ContactList />
         </StyledContactsBox>
       </StyledContainer>
     </StyledWrapper>
